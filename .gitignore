@@ -2,7 +2,16 @@
 .idea/
 .tern-project
 .awcache/
-dist/
+dist/*.*
+dist/release/1.1.*
+dist/release/1.2.*
+dist/release/1.3.0
+dist/release/1.3.1*
+dist/release/old/
+dist/assets/
+dist/demos/
+dist/docs/
+dist/poi-lists/
 node_modules/
 reports/browserstack-reports/
 reports/*.html
