@@ -1,6 +1,7 @@
 import { OIL_CONFIG, OIL_CONFIG_DEFAULT_VERSION } from './core_constants';
 import { logError, logInfo } from './core_log.js';
 import { getGlobalOilObject, isObject, OilVersion, setGlobalOilObject } from './core_utils';
+import inEU from '@segment/in-eu'
 
 /**
  * Read configuration of component from JSON script block
@@ -36,6 +37,14 @@ function getConfiguration() {
 
     verifyConfiguration();
     verifyLocaleObject();
+
+    // Check the defined values in the config and see if we should fall back to inEU
+    if(!getConfigValue(OIL_CONFIG.ATTR_GDPR_APPLIES, false) && !getConfigValue(OIL_CONFIG.ATTR_GDPR_APPLIES_GLOBALLY, false)) {
+      // Check to see if user is inEU
+      let isEU = inEU()
+      logInfo(`GDPR config settings undefined. setGdprApplies using inEU() value: ${isEU}`)
+      setGdprApplies(isEU)
+    }
 
     if (getPublicPath()) {
       __webpack_public_path__ = getPublicPath();
