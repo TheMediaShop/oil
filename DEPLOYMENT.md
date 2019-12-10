@@ -14,8 +14,8 @@ Deployment of oil.js requires the following steps:
    3. Check release title and write description.
    4. Finalize the release by clicking the `Publish release` button.
 4. Check the release on npmjs.com:
-   1. Go to [npmjs.org](https://www.npmjs.com/package/@ideasio/oil.js) and check that the new version is available (it may take a while until it's visible).
-   2. Check if `https://unpkg.com/@ideasio/oil.js@<new project version number>/release/current/` exists and is complete.
+   1. Go to [npmjs.org](https://www.npmjs.com/package/@tashop/oil.js) and check that the new version is available (it may take a while until it's visible).
+   2. Check if `https://unpkg.com/@tashop/oil.js@<new project version number>/release/current/` exists and is complete.
 5. Check the release on AWS:
    1. Go to [AWS S3](https://s3.console.aws.amazon.com/s3/buckets/oil-cloudfront-live/rawOil/) and check that the new version is available. 
 
