@@ -25,7 +25,7 @@ const METADATA = webpackMerge(commonConfig.metadata, {
   HMR: false
 });
 
-const BUNDLE_VERSION = process.env.npm_package_version + (process.env.SNAPSHOT || '-SNAPSHOT');
+const BUNDLE_VERSION = (process.env.SNAPSHOT || 'SNAPSHOT');
 const LATEST_RELEASE_VERSION = process.env.npm_package_version;
 
 console.info('Building BUNDLE_VERSION', BUNDLE_VERSION);
@@ -133,7 +133,7 @@ const config = webpackMerge(commonConfig, {
      * See: https://webpack.js.org/plugins/banner-plugin/
      * See: https://stackoverflow.com/questions/34280117/include-comment-at-top-of-webpack-file
      */
-    new webpack.BannerPlugin(BUNDLE_VERSION),
+    new webpack.BannerPlugin(`${LATEST_RELEASE_VERSION}-${BUNDLE_VERSION}`),
 
     /**
      * The UglifyJsPlugin will no longer put loaders into minimize mode, and the debug option has been deprecated. These options are simply moved into a new plugin, LoaderOptionsPlugin, for separation of concerns reasons. Use it as such:

@@ -8,7 +8,7 @@ fs.ensureDirSync(base_dir.concat('/dist/docs/'));
 
 fs.copySync(base_dir.concat('/docs/last-release'), base_dir.concat('/dist/docs/last-release'));
 
-const BUNDLE_VERSION = process.env.npm_package_version + (process.env.SNAPSHOT || '-SNAPSHOT');
+const BUNDLE_VERSION = (process.env.SNAPSHOT || 'SNAPSHOT');
 const BUNDLE_VERSION_RAW = process.env.npm_package_version;
 const SUPPORTED_LANGUAGE = getSupportedLanguagesFromDir();
 

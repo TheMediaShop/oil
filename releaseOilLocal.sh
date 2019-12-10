@@ -27,12 +27,12 @@ then
 fi
 
 echo "### Building release" $PACKAGE_VERSION$SNAPSHOT
-export SNAPSHOT="-RELEASE";npm run build:release || exit 1
+export SNAPSHOT="RELEASE";npm run build:release || exit 1
 
 
 echo "### Copying release to release directory"
 mkdir release/$PACKAGE_VERSION
-cp dist/*.$PACKAGE_VERSION-RELEASE.*.js release/$PACKAGE_VERSION/
+cp dist/*.RELEASE.*.js release/$PACKAGE_VERSION/
 cp -r dist/docs release/$PACKAGE_VERSION/
 
 
@@ -43,7 +43,7 @@ cp dist/stats.json release/$PACKAGE_VERSION/
 echo "### Copying hub.html to release directory and versioning it"
 cp src/hub.html release/$PACKAGE_VERSION/
 HUB_HTML=$(cat release/$PACKAGE_VERSION/hub.html)
-HUB_JS=$(cat release/$PACKAGE_VERSION/hub.$PACKAGE_VERSION-RELEASE.min.js)
+HUB_JS=$(cat release/$PACKAGE_VERSION/hub.RELEASE.min.js)
 echo "${HUB_HTML/<!--REPLACEME-->/$HUB_JS}" > release/$PACKAGE_VERSION/hub.html
 cp release/$PACKAGE_VERSION/hub.html dist/latest/hub.html
 
