@@ -122,7 +122,7 @@ export function getHubOrigin() {
 }
 
 export function getHubPath() {
-  return getConfigValue(OIL_CONFIG.ATTR_HUB_PATH, `/@ideasio/oil.js@${OilVersion.getLatestReleaseVersion()}/release/current/hub.html`);
+  return getConfigValue(OIL_CONFIG.ATTR_HUB_PATH, `/@tashop/oil.js@${OilVersion.getLatestReleaseVersion()}/release/current/hub.html`);
 }
 
 /**

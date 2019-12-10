@@ -6,7 +6,7 @@
 [oil.js](https://www.oiljs.org) is a lightweight consent manager and cookie banner. It is optimized for low latency and performance. It aims to be easy to customize, simple and user-friendly. It supports the IAB framework to forward the consent to ad providers.
 
 [![Latest Release](https://img.shields.io/github/release/as-ideas/oil.svg)](https://oil.axelspringer.com/release/) 
-[![npm version](https://img.shields.io/npm/v/@ideasio/oil.js.svg)](https://www.npmjs.com/package/@ideasio/oil.js)
+[![npm version](https://img.shields.io/npm/v/@tashop/oil.js.svg)](https://www.npmjs.com/package/@tashop/oil.js)
 [![Build Status](https://travis-ci.org/as-ideas/oil.svg?branch=master)](https://travis-ci.org/as-ideas/oil)
 [![Coverage Status](https://coveralls.io/repos/github/as-ideas/oil/badge.svg?branch=master)](https://coveralls.io/github/as-ideas/oil?branch=master)
 [![GPL2 License][license-image]][license-url] 
@@ -167,9 +167,9 @@ For detailed explanations, please visit the [documentation](https://oil.axelspri
 | poi_activate_poi | Activates single consent cookie for multiple websites. [See requirements for POI here](#poi--power-opt-in) | false
 | poi_group_name | POI group name. POI only affects those sites with the same group name (mandatory if POI is activated). The group name must be valid (existing). | None
 | poi_hub_origin | The origin of the hub.js installation | `https://unpkg.com`
-| poi_hub_path | The path to the hub.html installation on the origin, if any. | `/@ideasio/oil.js@{oilVersion}/release/current/hub.html`
+| poi_hub_path | The path to the hub.html installation on the origin, if any. | `/@tashop/oil.js@{oilVersion}/release/current/hub.html`
 | preview_mode | The preview mode is useful when testing OIL in a production or live environment. When value is `true`, the layer remains hidden until you manually trigger `window.AS_OIL.previewModeOn()` in your console. Reload, and the layer is displayed. You can hide it again with `window.AS_OIL.previewModeOff()`. | false
-| publicPath | The server path from which all chunks and ressources will be loaded. You should upload all released files there and configure it. | `//unpkg.com/@ideasio/oil.js@{oilVersion}/release/current/`
+| publicPath | The server path from which all chunks and ressources will be loaded. You should upload all released files there and configure it. | `//unpkg.com/@tashop/oil.js@{oilVersion}/release/current/`
 | require_optout_confirm | Flag to activate the opt-out confirmation dialog within the CPC. If set to `true`, additional label definitions (with prefix `label_cpc_purpose_optout`) are required. See the label configuration section in the documentation for details. | false
 | show_limited_vendors_only | Flag to only show the vendors limited by `iabVendorWhitelist` or `iabVendorBlacklist` in the CPC | false
 | suppress_cookies | Deactivates cookie setting - useful for AMP pages only | false
