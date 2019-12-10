@@ -1,0 +1,47 @@
+[
+    {
+        "name": "dist/0.RELEASE.chunk.js",
+        "size": 50744,
+        "sizeGz": 11820
+    },
+    {
+        "name": "dist/1.RELEASE.chunk.js",
+        "size": 5658,
+        "sizeGz": 2385
+    },
+    {
+        "name": "dist/2.RELEASE.chunk.js",
+        "size": 7776,
+        "sizeGz": 2556
+    },
+    {
+        "name": "dist/3.RELEASE.chunk.js",
+        "size": 873,
+        "sizeGz": 501
+    },
+    {
+        "name": "dist/hub.RELEASE.min.js",
+        "size": 78957,
+        "sizeGz": 25662
+    },
+    {
+        "name": "dist/hub.html",
+        "size": 356,
+        "sizeGz": 285
+    },
+    {
+        "name": "dist/oil.RELEASE.min.js",
+        "size": 89471,
+        "sizeGz": 28744
+    },
+    {
+        "name": "dist/oildevkit.RELEASE.min.js",
+        "size": 30561,
+        "sizeGz": 10443
+    },
+    {
+        "name": "dist/oilstub.RELEASE.min.js",
+        "size": 2003,
+        "sizeGz": 998
+    }
+]
