@@ -80,6 +80,12 @@ export function oilShowPreferenceCenter() {
       // then we want the group list because it may contain group-wide iabVendorWhitelist or iabVendorBlacklist
       import('../poi-list/poi.group.list.js').then(poi_group_list => {
         poi_group_list.getGroupList().then(() => {
+          // Should not show if GDPR doesnt apply
+          if (!gdprApplies()) {
+            logInfo('GDPR does not apply. Oil preference center not shown.');
+            return;
+          }
+
           let wrapper = document.querySelector('.as-oil');
           let entryNode = document.querySelector('#oil-preference-center');
           if (wrapper) {
@@ -88,8 +94,7 @@ export function oilShowPreferenceCenter() {
             entryNode.innerHTML = findAdvancedSettingsInlineTemplate();
             addOilHandlers(getOilDOMNodes());
           } else {
-            logError('No wrapper for the CPC with the id #oil-preference-center was found.');
-            return;
+            renderOil({ advancedSettings: true });
           }
           let consentData = getSoiConsentData();
           let currentPrivacySettings;

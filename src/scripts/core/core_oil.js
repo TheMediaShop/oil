@@ -4,12 +4,11 @@ import { logError, logInfo, logPreviewInfo } from './core_log';
 import { checkOptIn } from './core_optin';
 import { getSoiCookie, isBrowserCookieEnabled, isPreviewCookieSet, removePreviewCookie, removeVerboseCookie, setPreviewCookie, setVerboseCookie } from './core_cookies';
 import { doSetTealiumVariables } from './core_tealium_loading_rules';
-import { getLocale, isAmpModeActivated, isPreviewMode, resetConfiguration, setGdprApplies, gdprApplies } from './core_config';
+import { getLocale, isAmpModeActivated, isPreviewMode, resetConfiguration, setGdprApplies } from './core_config';
 import { EVENT_NAME_HAS_OPTED_IN, EVENT_NAME_NO_COOKIES_ALLOWED } from './core_constants';
 import { executeCommandCollection } from './core_command_collection';
 import { manageDomElementActivation } from './core_tag_management';
 import { sendConsentInformationToCustomVendors } from './core_custom_vendors';
-import { renderOil } from '../userview/userview_modal'
 
 /**
  * Initialize Oil on Host Site
@@ -141,11 +140,9 @@ function attachUtilityFunctionsToWindowObject() {
   });
 
   setGlobalOilObject('showPreferenceCenter', () => {
-    if(gdprApplies()) {
-      renderOil({ advancedSettings: true });
-    } else {
-      return 'GDPR does not apply. Skipping...';
-    }
+    loadLocale(userview_modal => {
+      userview_modal.oilShowPreferenceCenter();
+    });
   });
 
   setGlobalOilObject('triggerOptIn', () => {
@@ -178,8 +175,6 @@ function attachUtilityFunctionsToWindowObject() {
 
   setGlobalOilObject('disableGDPR', () => {
     setGdprApplies(false);
-    resetConfiguration();
-    initOilLayer();
     return 'GDPR disabled';
   });
 }
