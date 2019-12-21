@@ -257,7 +257,7 @@ export function setLocale(localeObject) {
 }
 
 export function gdprApplies() {
-  return getConfigValue(OIL_CONFIG.ATTR_GDPR_APPLIES_GLOBALLY, true) || getConfigValue(OIL_CONFIG.ATTR_GDPR_APPLIES, false);
+  return getConfigValue(OIL_CONFIG.ATTR_GDPR_APPLIES_GLOBALLY, false) || getConfigValue(OIL_CONFIG.ATTR_GDPR_APPLIES, false);
 }
 
 export function setGdprApplies(value = true) {
