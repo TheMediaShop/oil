@@ -75,7 +75,7 @@ function verifyLocaleObject() {
   let locale = getLocale();
 
   if ((!locale || (typeof locale) === 'string') && getLocaleUrl() === undefined) {
-    logError('Incorrect or missing locale parameter found. Please review documentation on how to set the locale object in your configuration. Using default locale.');
+    logInfo('Incorrect or missing locale parameter found. Please review documentation on how to set the locale object in your configuration. Using default locale.');
   } else if (locale && isObject(locale)) {
     if (!locale.localeId) {
       logError('Your configuration is faulty - "locale" object misses "localeId" property. See the oil.js documentation for details.');
